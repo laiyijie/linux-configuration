@@ -1,0 +1,9 @@
+
+mysql grant user by table prefix
+
+SELECT   CONCAT('GRANT SELECT ON test.', TABLE_NAME, ' to ''foouser'';')
+FROM     INFORMATION_SCHEMA.TABLES
+WHERE    TABLE_SCHEMA = 'test'
+      AND TABLE_NAME LIKE 'foo_%'
+
+
